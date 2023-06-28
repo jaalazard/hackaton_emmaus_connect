@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ConditionRepository;
+use App\Repository\StateRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ConditionRepository::class)]
-#[ORM\Table(name: '`condition`')]
-class Condition
+#[ORM\Entity(repositoryClass: StateRepository::class)]
+#[ORM\Table(name: 'state')]
+class State
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

@@ -21,7 +21,7 @@ final class Version20230628143300 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE brand (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE `condition` (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE state (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE model (id INT AUTO_INCREMENT NOT NULL, marque_id INT NOT NULL, name VARCHAR(255) NOT NULL, serial VARCHAR(255) NOT NULL, color VARCHAR(255) NOT NULL, ram VARCHAR(255) NOT NULL, size VARCHAR(255) NOT NULL, weight INT NOT NULL, connection VARCHAR(255) NOT NULL, memory VARCHAR(255) NOT NULL, INDEX IDX_D79572D94827B9B2 (marque_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE phone (id INT AUTO_INCREMENT NOT NULL, brand_id INT NOT NULL, model_id INT NOT NULL, etat_id INT NOT NULL, user_id INT DEFAULT NULL, is_blocked TINYINT(1) NOT NULL, picture VARCHAR(255) DEFAULT NULL, INDEX IDX_444F97DD44F5D008 (brand_id), INDEX IDX_444F97DD7975B7E7 (model_id), INDEX IDX_444F97DDD5E86FF (etat_id), INDEX IDX_444F97DDA76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, name VARCHAR(255) DEFAULT NULL, role VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -29,7 +29,7 @@ final class Version20230628143300 extends AbstractMigration
         $this->addSql('ALTER TABLE model ADD CONSTRAINT FK_D79572D94827B9B2 FOREIGN KEY (marque_id) REFERENCES brand (id)');
         $this->addSql('ALTER TABLE phone ADD CONSTRAINT FK_444F97DD44F5D008 FOREIGN KEY (brand_id) REFERENCES brand (id)');
         $this->addSql('ALTER TABLE phone ADD CONSTRAINT FK_444F97DD7975B7E7 FOREIGN KEY (model_id) REFERENCES model (id)');
-        $this->addSql('ALTER TABLE phone ADD CONSTRAINT FK_444F97DDD5E86FF FOREIGN KEY (etat_id) REFERENCES `condition` (id)');
+        $this->addSql('ALTER TABLE phone ADD CONSTRAINT FK_444F97DDD5E86FF FOREIGN KEY (etat_id) REFERENCES state (id)');
         $this->addSql('ALTER TABLE phone ADD CONSTRAINT FK_444F97DDA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
     }
 
@@ -42,7 +42,7 @@ final class Version20230628143300 extends AbstractMigration
         $this->addSql('ALTER TABLE phone DROP FOREIGN KEY FK_444F97DDD5E86FF');
         $this->addSql('ALTER TABLE phone DROP FOREIGN KEY FK_444F97DDA76ED395');
         $this->addSql('DROP TABLE brand');
-        $this->addSql('DROP TABLE `condition`');
+        $this->addSql('DROP TABLE state');
         $this->addSql('DROP TABLE model');
         $this->addSql('DROP TABLE phone');
         $this->addSql('DROP TABLE user');

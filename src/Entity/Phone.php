@@ -29,7 +29,7 @@ class Phone
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Condition $etat = null;
+    private ?State $etat = null;
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
     private ?User $user = null;
@@ -87,12 +87,12 @@ class Phone
         return $this;
     }
 
-    public function getEtat(): ?Condition
+    public function getEtat(): ?State
     {
         return $this->etat;
     }
 
-    public function setEtat(?Condition $etat): static
+    public function setEtat(?State $etat): static
     {
         $this->etat = $etat;
 
