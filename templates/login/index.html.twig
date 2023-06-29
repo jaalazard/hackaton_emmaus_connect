@@ -5,7 +5,7 @@
 
 {% block body %}
 	<section class="container d-flex justify-content-center">
-		<div class="col form-row fw-bold">	
+		<div class="col form-row fw-bold">
 			{% if error %}
 				<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 			{% endif %}
