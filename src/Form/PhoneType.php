@@ -21,6 +21,7 @@ class PhoneType extends AbstractType
                     'Non' => false,
                     'Oui' => true,
                 ], 
+
                 'label' => 'Est-il bloqué ?',
                 'label_attr' => [
                     'class' => 'text-light pt-4',

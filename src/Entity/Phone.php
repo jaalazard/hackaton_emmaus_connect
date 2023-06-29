@@ -34,6 +34,12 @@ class Phone
     #[ORM\ManyToOne(inversedBy: 'phones')]
     private ?User $user = null;
 
+    #[ORM\Column]
+    private ?float $price = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $category = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,6 +113,30 @@ class Phone
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): static
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }
