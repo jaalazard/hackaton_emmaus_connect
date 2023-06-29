@@ -2,11 +2,6 @@
     color: $dark;
 }
 
-.profil-nav {
-    width: 30px;
-    height: 30px;
-}
-
 .logo-nav {
     width: 150px;
     height: auto;
@@ -21,11 +16,11 @@ nav {
     font-family: $font-family-base;
     font-weight: bold;
     font-size: $font-size-nav;
-    color: $primary;
+    color: $light;
 }
 
 .navbar {
-    --bs-navbar-toggler-border-color: none;
+    --bs-navbar-toggler-border-color: $light;
 }
 
 .nav-link:hover {
