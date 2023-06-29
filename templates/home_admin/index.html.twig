@@ -1,6 +1,31 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Admin-home
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+        <div class="p-5 mt-5" style="font-size: 2.5rem;">
+        <span
+            {{ stimulus_controller('symfony/ux-typed', {
+                strings: [
+                    'Bienvenue sur la partie administrable de notre site !',
+                    ' Ici, vous pouvez modifier, supprimer et gérer les téléphones enregistrés par les bénévoles et les employés',
+                    ' Ajoutez, supprimez ou modifiez facilement les modèles et marques de téléphones,',
+                    ' ainsi que les profils des bénévoles et employés.',
+                    ' Prenez le contrôle complet de vos données en quelques clics.',
+                    'Simplifiez la gestion des informations relatives aux téléphones et aux personnes impliquées.',
+                    ' Personnalisez votre base de données en fonction de vos besoins actuels.',
+                    'Profitez de cette interface conviviale pour optimiser votre travail administratif',
+                ],
+                loop: true,
+                showCursor: true,
+                cursorChar: '✨',
+            }) }}
+        ></span>
+    </div>
+
+
+<di class="d-flex justify-content-center"v>
+    <img style="width: 50%;"src=" {{ asset('build/images/adminWork.gif') }} " alt="image téléphone">
+</div>
+{% endblock %}

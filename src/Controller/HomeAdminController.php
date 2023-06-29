@@ -12,7 +12,6 @@ class HomeAdminController extends AbstractController
     public function index(): Response
     {
         return $this->render('home_admin/index.html.twig', [
-            'controller_name' => 'HomeAdminController',
         ]);
     }
 }
