@@ -26,6 +26,7 @@ class PhoneFixtures extends Fixture implements DependentFixtureInterface
             $phone->setUser($this->getReference('user_' . $faker->numberBetween(1, 10)));
             $phone->setCategory(self::CATEGORIES[array_rand(self::CATEGORIES)]);
             $phone->setPrice($faker->numberBetween(10, 1000));
+            $phone->setIsSold($faker->boolean());
 
             $this->addReference('phone_' . $i, $phone);
 
