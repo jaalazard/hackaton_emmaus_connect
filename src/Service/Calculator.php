@@ -3,12 +3,13 @@
 namespace App\Service;
 
 use Exception;
+use App\Entity\State;
 
 use function PHPUnit\Framework\throwException;
 
 class Calculator
 {
-    public function CategoryCalculator($ram, $memory, $isBlocked, $state)
+    public function CategoryCalculator(int $ram, string $memory, bool $isBlocked, State $state)
     {
         //Initialisation des points
         $points = 0;
@@ -42,16 +43,15 @@ class Calculator
             $points -= 0.1 * $points;
         }
         //pondération en fonction de l'état
-        if($state != 'correct' && $state != 'bon' && $state != 'TBE'){
+        if($state->getName() === 'mauvais'){
             throw new Exception('Etat insuffisant pour une mise en vente !');
         }
-        elseif($state === "bon"){
+        elseif($state->getName() === "bon"){
             $points += 0.05 * $points;
         }
-        elseif($state === "TBE"){
+        elseif($state->getName() === "TBE"){
             $points += 0.1 * $points;
         }
-
         //Détermination de la catégorie en fonction des points
         if($points >= 41 && $points < 116){
             return 'Catégorie C';
@@ -70,7 +70,7 @@ class Calculator
         }
     }
 
-    public function PriceCalculator($ram, $memory, $isBlocked, $state)
+    public function PriceCalculator(int $ram, string $memory, bool $isBlocked, State $state)
     {
         //Initialisation des points
         $points = 0;
@@ -84,8 +84,6 @@ class Calculator
             $points += 70;
         } elseif ($ram >= 6) {
             $points += 85;
-        } else{
-            throw new Exception('RAM insuffisante pour une mise en vente');
         }
         //Calcul des points en fonction de la capacité de stockage
         if ($memory === 16) {
@@ -96,21 +94,16 @@ class Calculator
             $points += 66;
         } elseif ($memory >= 128) {
             $points += 95;
-        } else {
-            throw new Exception('Mémoire insuffisante pour une mise en vente');
-         }
+        }
         //Pondération en fonction du blocage
         if ($isBlocked === true) {
             $points -= 0.1 * $points;
         }
         //pondération en fonction de l'état
-        if($state != 'correct' && $state != 'bon' && $state != 'TBE'){
-            throw new Exception('Etat insuffisant pour une mise en vente !');
-        }
-        elseif($state === "bon"){
+        if($state->getName() === "bon"){
             $points += 0.05 * $points;
         }
-        elseif($state === "TBE"){
+        elseif($state->getName() === "TBE"){
             $points += 0.1 * $points;
         }
         
