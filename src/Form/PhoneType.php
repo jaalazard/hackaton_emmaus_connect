@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class PhoneType extends AbstractType
 {
@@ -50,14 +51,15 @@ class PhoneType extends AbstractType
                 'choice_label' => 'name',
             ],)
 
-            ->add('picture',
-            null,
-            [
+            ->add('phoneFile', VichFileType::class, [
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_uri' => true, // not mandatory, default is true
                 'label' => 'Image',
                 'label_attr' => [
                     'class' => 'text-light pt-4',
                 ],
-            ],);
+    ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
