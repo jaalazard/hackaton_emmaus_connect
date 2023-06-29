@@ -10,7 +10,7 @@ use Faker\Factory;
 class StateFixtures extends Fixture
 {
     public const STATEFIXTURE = [
-        'REPARABLE', 'BLOQUE', 'RECONDITIONABLE', 'RECONDITIONNE',
+        'HS', 'mauvais', 'bon', 'TBE',
     ];
 
     public function load(ObjectManager $manager): void
