@@ -10,7 +10,7 @@
 
 {% block body %}
 	<main class="container mt-4 pt-4 d-flex justify-content-center">
-		<div class="myBlock mb-4 pb-4">
+		<div class="myBlock card bg-light  bg-light rounded-1 rounded-bottom-5 rounded-start-1 mb-5 pb-4">
 			<h1 class="text-center myhead">{{ phone.model.marque.name }}</h1>
 			<div class="myLine"></div>
 			<h2 class="text-center myhead mb-4 pb-4">{{ phone.model.name }}</h2>
@@ -36,12 +36,14 @@
 						<li class="mt-2">
 							<span class="why">Taille:
 							</span>
-							{{ phone.model.size }} pouces
+							{{ phone.model.size }}
+							pouces
 						</li>
 						<li class="mt-2">
 							<span class="why">Poids:
 							</span>
-							{{ phone.model.weight }} grammes
+							{{ phone.model.weight }}
+							grammes
 						</li>
 						<li class="mt-2">
 							<span class="why">Connection:
@@ -62,7 +64,10 @@
 						{% else %}
 							<li class="mt-2">Ce téléphone est débloqué</li>
 						{% endif %}
-						<li class="d-flex justify-content-end"><button class="btn btn-primary p-2 px-4 mt-4">{{ phone.price }} €</button></li>
+						<li class="d-flex justify-content-end">
+							<button class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-5">{{ phone.price }}
+								€</button>
+						</li>
 					</ul>
 				</div>
 			</div>
