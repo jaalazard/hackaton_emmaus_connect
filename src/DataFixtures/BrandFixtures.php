@@ -7,18 +7,69 @@ use Faker\Factory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class BrandFixtures extends Fixture 
+class BrandFixtures extends Fixture
 {
-    public const BRANCCOUNT = 30;
-    
+    public const BRANCCOUNT = [
+        "Apple",
+        "Samsung",
+        "Google",
+        "Huawei",
+        "Xiaomi",
+        "Sony",
+        "LG",
+        "Motorola",
+        "Nokia",
+        "OnePlus",
+        "HTC",
+        "Lenovo",
+        "ASUS",
+        "BlackBerry",
+        "OPPO",
+        "Vivo",
+        "Realme",
+        "ZTE",
+        "Alcatel",
+        "Honor",
+        "Meizu",
+        "TCL",
+        "Infinix",
+        "Panasonic",
+        "LeEco",
+        "Gionee",
+        "Micromax",
+        "BLU",
+        "Yota",
+        "Essential",
+        "Sharp",
+        "Amazon",
+        "Razer",
+        "Fairphone",
+        "ZUK",
+        "CAT",
+        "Energizer",
+        "Palm",
+        "Wiko",
+        "Acer",
+        "Microsoft",
+        "Doro",
+        "Vertu",
+        "Maxon",
+        "NEC",
+        "Prestigio",
+        "QMobile",
+        "Siemens",
+        "Sonim",
+        "Toshiba",
+        "Unnecto",
+        "Xolo",
+    ];
+
     public function load(ObjectManager $manager): void
     {
-        $faker = Factory::create();
-
-        for($i=0; $i<self::BRANCCOUNT; $i++){
+        foreach (self::BRANCCOUNT as $key => $brands) {
             $brand = new Brand();
-            $brand->setName($faker->word());
-            $this->addReference('brand_' . $i, $brand);
+            $brand->setName($brands);
+            $this->addReference('brand_' . $key, $brand);
 
             $manager->persist($brand);
         }
