@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center" style="color:white;">Page non trouvée, erreur :
+		{{status_code}}</h1>
+
+	<img style="width: 100%;" src=" {{ asset('build/images/error2.gif') }} " alt="image téléphone">
+{% endblock %}
