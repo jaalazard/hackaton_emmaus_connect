@@ -9,6 +9,13 @@
 		<h1 class="text-center notreStockTitle">Notre stock</h1>
 	</div>
 	<section class="container justify-content-center">
+	<div>
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<button class="btn button">Rechercher</button>
+	{{ form_end(form) }}
+	
+	</div>
 		<div class="row mt-5 mx-5">
 			{% for phone in phones %}
 				<div class="col-4">

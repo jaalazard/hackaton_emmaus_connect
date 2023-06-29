@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Phone;
+use App\Entity\PhoneSearch;
+use App\Form\PhoneSearchType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -37,6 +39,22 @@ class PhoneRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function searchPhone(?PhoneSearch $PhoneSearch) :array
+    {
+        $queryBuilder= $this->createQueryBuilder('p');
+        if($PhoneSearch->getMinPrice()){
+           $queryBuilder->andWhere('p.price > :minPrice')
+                    ->setParameter('minPrice', $PhoneSearch->getMinPrice());
+        }
+        if($PhoneSearch->getMaxPrice()){
+            $queryBuilder->andWhere('p.price < :maxPrice')
+                     ->setParameter('maxPrice', $PhoneSearch->getMaxPrice());
+         }
+         return $queryBuilder ->getQuery()
+                    ->getResult()
+                    ;
     }
 
 //    /**
