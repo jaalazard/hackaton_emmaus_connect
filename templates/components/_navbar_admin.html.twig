@@ -4,36 +4,48 @@
 			<span class="navbar-toggler-icon mx-5 my-3"></span>
 		</button>
 		<div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100" id="navbarNav">
-			<a class="navbar-brand mx-3" href="{{ path('accueil_admin')}}">
-				<img class="logo-nav img-fluid d-none d-md-block mt-5" src=" {{ asset('build/images/logo.png') }} " alt="Logo Externatic">
-				<img class="logo-nav-res img-fluid d-md-none d-block mt-5" src=" {{ asset('build/images/logo-res.png') }} " alt="Logo Externatic">
-			</a>
+			<a class="navbar-brand mx-3" href="{{ path('home_')}}">
+			<img class="logo-nav img-fluid d-none d-md-block" src=" {{ asset('build/images/Logo_EC_light.png') }} " alt="Logo Emmaüs Connect">
+		</a>
 			<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center mx-auto mt-5" id="menu">
 				<li>
-					<a href="{{ path('app_consultant_index')}}" class="nav-link px-0 align-middle my-3">
+					<a href="{{ path('app_model_index') }}" class="nav-link px-0 align-middle my-3">
 						<i class="fs-4 bi-speedometer2"></i>
-						<span class="text-white fw-bold">Consultant</span>
+						<span class="text-white fw-bold">Modèle</span>
 					</a>
 				</li>
 				<li>
-					<a href="{{path('admin_jobOffer_index')}}" class="nav-link px-0 align-middle my-3">
+					<a href="{{ path('app_brand_index') }}" class="nav-link px-0 align-middle my-3">
 						<i class="fs-4 bi-bootstrap"></i>
-						<span class="text-white fw-bold">Offres d'emploi</span>
+						<span class="text-white fw-bold">Marque</span>
 					</a>
 				</li>
+				<li>
+					<a href="{{ path('app_phone_index') }}" class="nav-link px-0 align-middle my-3">
+						<i class="fs-4 bi-bootstrap"></i>
+						<span class="text-white fw-bold">Téléphone</span>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('app_user_index') }}" class="nav-link px-0 align-middle my-3">
+						<i class="fs-4 bi-bootstrap"></i>
+						<span class="text-white fw-bold">User</span>
+					</a>
+				</li>
+
 			</ul>
 			<div class="dropdown pb-0 fixed-bottom">
 				<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle mx-3" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-					<img src="{{ asset('build/images/placeholder-consultant.jpeg')}}" alt="hugenerd" width="30" height="30" class="rounded-circle">
+					<img src="#" alt="hugenerd" width="30" height="30" class="rounded-circle">
 					<span class="d-none d-sm-inline mx-1 ">Utilisateur</span>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
 					<hr class="dropdown-divider">
 					<li>
-						<a class="dropdown-item " href="{{ path('app_logout') }}">Déconnexion</a>
+						<a class="dropdown-item " href="#">Déconnexion</a>
 					</li>
 					<li>
-						<a class="dropdown-item " href="{{ path('app_home')}}">Accueil</a>
+						<a class="dropdown-item " href"#">Accueil</a>
 					</li>
 				</ul>
 			</div>
