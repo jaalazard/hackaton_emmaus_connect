@@ -1,41 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Emmaüs Connect | espace personnel{% endblock %}
+{% block title %}Emmaüs Connect | espace personnel
+{% endblock %}
 
 {% block body %}
-	<section class="container-fluid">
-		{% if error %}
-			<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-		{% endif %}
+	<section class="container d-flex justify-content-center">
+		<div class="col form-row fw-bold">	
+			{% if error %}
+				<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
 
-		<div class="login row">
+			<h1 class="fw-bold text-uppercase d-flex mb-2 h3 mt-5 text-light">Login</h1>
 
-			<div class="col-md-8 col-12 d-flex align-items-center justify-content-center align-items-md-center justify-content-md-center bg-secondary">
-				<div>
-					<h1 class="fw-bold text-uppercase d-flex mb-2 h4 mt-5 text-light">Login</h1>
+			<form action="{{ path('app_login') }}" method="post">
+				<div class="d-flex flex-column">
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-					<form action="{{ path('app_login') }}" method="post">
-						<div class="d-flex flex-column">
-							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<label class="form-label fw-bold text-light text-uppercase h5" for="username">Email</label>
+					<div class="input-group w-100 w-md-50">
+						<span class="input-group-text bg-primary"></span>
+						<input type="text" placeholder="exemple@exemple.com" class="form-control" id="username" name="_username" value="{{ last_username }}">
+					</div>
 
-							<label class="form-label fw-bold text-light text-uppercase h5" for="username">Email</label>
-							<div class="input-group w-75 w-md-50">
-								<span class="input-group-text bg-primary"></span>
-								<input type="text" placeholder="exemple@exemple.com" class="form-control" id="username" name="_username" value="{{ last_username }}">
-							</div>
+					<label class="fw-bold form-label text-light text-uppercase mt-3 h5" for="password">Mot de passe</label>
+					<div class="input-group w-100 w-md-50">
+						<span class="input-group-text bg-primary"></span>
+						<input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password">
+					</div>
 
-							<label class="fw-bold form-label text-light text-uppercase mt-3 h5" for="password">Mot de passe</label>
-							<div class="input-group w-75 w-md-50">
-								<span class="input-group-text bg-primary"></span>
-								<input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password">
-							</div>
-
-							<input type="hidden" name="_target_path" value="app_home">
-
-							<button class="w-50 mt-4 btn btn-primary fw-bold text-uppercase" type="submit">Valider</button>
-						</div>
-					</form>
+					<input type="hidden" name="_target_path" value="app_home">
+					<div class="d-flex justify-content-end">
+						<button class="w-50 mt-4 btn btn-primary fw-bold text-uppercase" type="submit">Valider</button>
+					</div>
 				</div>
-			</div>
-		</section>
-	{% endblock %}
+			</form>
+		</div>
+	</section>
+{% endblock %}
