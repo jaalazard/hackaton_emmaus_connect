@@ -11,28 +11,25 @@
 {% endblock %}
 
 {% block body %}
-	<img class="img-home img-fluid z-n1 position-absolute" src=" {{ asset('build/images/backgroundHomeEC.png') }} " alt=" background-radient">
-	<header class="pink-stripe ">
-		<img class="imgtriplestars opacity-0" src=" {{ asset('build/images/triplestarslight.png') }} " alt="background-radient">
-
-		<div class="container-xl">
-
+	<img class="img-home img-fluid z-n1 position-absolute" src=" {{ asset('build/images/rectangleRadient.png') }} " width="150%" alt="background-radient">
+	<header class="pink-stripe">
+		<div class="container-xl g-5">
+			<button type="button" class="button text-uppercase p-3 btn col-btn-sm rounded-5 d-grid col-4 mx-auto m-5">
+				<a class="text-dark text-decoration-none fs-3 fw-bolder" href="#">Devenir bénévole</a>
+			</button>
 			<div class="row row-cols-1 row-cols-md-2 m-5">
 				<div class="col">
 					<div class="bg-dark fw-bold text-light text-decoration-none fs-3 text-uppercase p-5 rounded-end-5 rounded-bottom-0 rounded-start-0">
 						<div class="card-body">
-							<h2 class="fw-bold text-light fs-3 text-uppercase mt-5">Faire du numérique une chance pour tous</h2>
-							<img src=" {{ asset('build/images/circle.png') }} " class="imgcircle my-5">
+							<h2 class="fw-bold text-light fs-2 text-uppercase">Faire du numérique une chance pour tous</h2>
+							<img src=" {{ asset('build/images/circle.png') }} " class="imgcircle mt-4">
 						</div>
 					</div>
 				</div>
 				<div class="col">
 					<div class="bg-dark  p-5 rounded-end-0 rounded-bottom-5 rounded-start-0">
 						<div class="card-body">
-							<h2 class="fw-bold text-light mt-5 fs-3 text-uppercase">Smartphones et ordinateurs portables : des besoins vitaux pour l’association</h2>
-							<button type="button" class="button text-uppercase p-3 btn col-btn-sm rounded-5 d-grid col-7 my-4">
-								<a class="text-dark text-decoration-none fs-4 fw-bolder" href="#">Devenir bénévole</a>
-							</button>
+							<h2 class="fw-bold text-light fs-2 text-uppercase">Smartphones et ordinateurs portables : des besoins vitaux pour l’association</h2>
 						</div>
 					</div>
 				</div>
@@ -41,10 +38,10 @@
 		<main class="container">
 			<img class="imgtriplestars" src=" {{ asset('build/images/triplestarslight.png') }} " alt="background-radient">
 
-			<button type="button" class="button shadow-lg text-uppercase p-3 btn col-btn-sm rounded-5 d-grid col-4 mx-auto m-5">
-				<a class="text-dark text-decoration-none fs-2 fw-bolder" href="#">nos ventes</a>
+			<button type="button" class="button text-uppercase p-3 btn col-btn-sm rounded-5 d-grid col-4 mx-auto m-5">
+				<a class="text-dark text-decoration-none fs-3 fw-bolder" href="#">VENDRE</a>
 			</button>
-			<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 m-5">
+			<div class="row row-cols-1 row-cols-md-3 g-4 m-5">
 				<div class="col">
 					<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
 						<div class="card-body position relative">
@@ -65,7 +62,7 @@
 					<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
 						<div class="card-body">
 							<div class="img d-flex justify-content-center">
-								<img src=" {{ asset('build/images/iphone.png') }} " class="imgcard m-4 ">
+								<img src=" {{ asset('build/images/macbook.png') }} " class="imgcard m-4 ">
 							</div>
 							<h3 class="text-dark fs-4 fw-bold text-uppercase">Modéle</h3>
 							<h4 class="text-dark fs-5 fst-italic text-uppercase ">Go - Color</h4>
@@ -108,48 +105,4 @@
 				</div>
 			</div>
 		</main>
-		<img src={{ asset("build/images/stars_light.png") }} class="imgstars justify-content-center mx-5">
-
-		<h2 class="button text-center text-uppercase p-4 col-btn-sm rounded-5 d-grid col-4 mx-auto m-5 text-dark text-decoration-none fs-3 fw-bolder">Foire aux questions</h2>
-		<div class="d-flex justify-content-center mb-5">
-			<div class="row">
-				<div class="col-2"></div>
-				<div class="col-7 my-5 ">
-					<div class="accordion mt-5" id="accordionPanelsStayOpenExample">
-						<div class="accordion-item bg-transparent">
-							<h2 class="accordion-header">
-								<button class="button accordion-button text-dark text-center text-decoration-none text-uppercase fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-									Vous êtes une organisation ?
-								</button>
-							</h2>
-							<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-								<div class=" accordion-body m-4 p-4 bg-transparent border border-dark rounded-2">
-									<h5 class="text-light fs-5">
-										Nous reprenons votre matériel numérique usagé pour lui donner une deuxième vie solidaire auprès de publics en situation de précarité. Nous revalorisons : ordinateurs portables, smartphones, tablettes de moins de 7 ans, fonctionnels et accompagnés de leurs câbles d’alimentation/chargeurs.
-										<br>
-										Toutes les propositions de dons de matériels informatiques passent désormais par notre plateforme LaCollecte.tech. C’est très simple et rapide !</h5>
-								</div>
-							</div>
-						</div>
-						<div class="accordion-item bg-transparent">
-							<h2 class="accordion-header">
-								<button class="button accordion-button bg-dark text-center text-dark text-uppercase text-decoration-none fs-4 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsstayopen-collapsetwo”">
-									Vous êtes un particulier ?
-								</button>
-							</h2>
-							<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-								<div class="accordion-body m-4 p-4 bg-transparent border border-dark rounded-2 ">
-									<h5 class="text-light fs-5">Si vous souhaitez faire don de votre matériel (ordinateur portable, tablette ou smartphone), en Île-de-France, Emmaüs Connect lance sa collecte solidaire auprès des citoyen·ne·s. Les équipements collectés sont remis en état et redistribués en Île-de-France par Emmaüs Connect à des personnes en situation de précarité numérique.
-										<br>
-										Et si vous n’avez pas de matériel à donner, un soutien financier, même de quelques euros, sera précieux pour financer nos accompagnements ou du matériel de seconde main !</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-2">
-					<img src={{ asset("build/images/group_circle.png") }} class="imggroupcircle justify-content-center mx-5">
-				</div>
-			</div>
-		</div>
 	{% endblock %}
