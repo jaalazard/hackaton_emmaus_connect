@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Phone;
+use App\Entity\PhoneSearch;
+use App\Form\PhoneSearchType;
 use App\Form\PhoneType;
 use App\Repository\PhoneRepository;
 use App\Service\Calculator;
@@ -14,12 +16,24 @@ use Symfony\Component\Routing\Annotation\Route;
 class PhoneFormController extends AbstractController
 {
 
-    #[Route('/monStock', name: 'app_phone_stock', methods: ['GET'])]
-    public function myStock(PhoneRepository $phoneRepository): Response
+    #[Route('/monStock', name: 'app_phone_stock')]
+    public function myStock(PhoneRepository $phoneRepository, Request $request ): Response
     {
+        $phoneSearch = new PhoneSearch();
+        $form = $this->createForm(PhoneSearchType::class, $phoneSearch);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $phones = $phoneRepository->searchPhone($phoneSearch);
+        } else {
+        $phones = $phoneRepository->findAll();
+        }
+
         return $this->render('phone/monStock.html.twig', [
-            'phones' => $phoneRepository->findAll(),
+            'phones' => $phones,
+            'form' => $form,
         ]);
+    
     }
 
     #[Route('/ajouterUnTelephone', name: 'app_phone_form')]
