@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/brand')]
+#[Route('/Marque')]
 class BrandController extends AbstractController
 {
     #[Route('/', name: 'app_brand_index', methods: ['GET'])]
@@ -21,7 +21,7 @@ class BrandController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_brand_new', methods: ['GET', 'POST'])]
+    #[Route('/ajouter', name: 'app_brand_new', methods: ['GET', 'POST'])]
     public function new(Request $request, BrandRepository $brandRepository): Response
     {
         $brand = new Brand();
@@ -48,7 +48,7 @@ class BrandController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_brand_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'app_brand_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Brand $brand, BrandRepository $brandRepository): Response
     {
         $form = $this->createForm(BrandType::class, $brand);
