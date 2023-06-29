@@ -11,6 +11,7 @@ use Doctrine\Persistence\ObjectManager;
 class PhoneFixtures extends Fixture implements DependentFixtureInterface
 {
     public const PHONECOUNT = 100;
+    public const CATEGORIES = ['Premium', 'Catégorie A', 'Catégorie B', 'Catégorie C', 'Hors catégorie'];
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create();
@@ -23,6 +24,8 @@ class PhoneFixtures extends Fixture implements DependentFixtureInterface
             $phone->setModel($this->getReference('model_' . $faker->numberBetween(1, 69)));
             $phone->setEtat($this->getReference('state_' . $faker->numberBetween(0, 3)));
             $phone->setUser($this->getReference('user_' . $faker->numberBetween(1, 10)));
+            $phone->setCategory(self::CATEGORIES[array_rand(self::CATEGORIES)]);
+            $phone->setPrice($faker->numberBetween(10, 1000));
 
             $this->addReference('phone_' . $i, $phone);
 

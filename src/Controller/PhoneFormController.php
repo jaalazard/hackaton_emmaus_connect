@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Phone;
 use App\Form\PhoneType;
 use App\Repository\PhoneRepository;
+use App\Service\Calculator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,7 +23,7 @@ class PhoneFormController extends AbstractController
     }
 
     #[Route('/ajouterUnTelephone', name: 'app_phone_form')]
-    public function index(Request $request, PhoneRepository $phoneRepository): Response
+    public function index(Request $request, PhoneRepository $phoneRepository, Calculator $calculator): Response
     {
         $phone = new Phone();
         $form = $this->createForm(PhoneType::class, $phone);
@@ -30,6 +31,8 @@ class PhoneFormController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $phone->setUser($this->getUser());
+            $phone->setCategory($calculator->CategoryCalculator($phone->getModel()->getRam(), $phone->getModel()->getMemory(), $phone->isIsBlocked(), $phone->getEtat()));
+            $phone->setPrice($calculator->PriceCalculator($phone->getModel()->getRam(), $phone->getModel()->getMemory(), $phone->isIsBlocked(), $phone->getEtat()));
             $phoneRepository->save($phone, true);
 
             $myPhone = $phoneRepository->findOneBy([], ['id' => 'DESC']);
