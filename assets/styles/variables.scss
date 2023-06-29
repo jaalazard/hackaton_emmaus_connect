@@ -1,0 +1,15 @@
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&display=swap');
+
+  $primary: #ca2020;
+  $secondary: #138522;
+  $light: #fffdf4;
+  $background: repeating-linear-gradient(90deg, hsla(112, 98%, 100%, 0.05) 0px, hsla(112, 98%, 100%, 0.05) 1px, transparent 1px, transparent 11px, hsla(112, 98%, 100%, 0.05) 11px, hsla(112, 98%, 100%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(112, 98%, 100%, 0.05) 0px, hsla(112, 98%, 100%, 0.05) 1px, transparent 1px, transparent 11px, hsla(112, 98%, 100%, 0.05) 11px, hsla(112, 98%, 100%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(0deg, hsla(112, 98%, 100%, 0.05) 0px, hsla(112, 98%, 100%, 0.05) 1px, transparent 1px, transparent 11px, hsla(112, 98%, 100%, 0.05) 11px, hsla(112, 98%, 100%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(90deg, hsla(112, 98%, 100%, 0.05) 0px, hsla(112, 98%, 100%, 0.05) 1px, transparent 1px, transparent 11px, hsla(112, 98%, 100%, 0.05) 11px, hsla(112, 98%, 100%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(90deg, rgb(255, 226, 243), rgb(255, 255, 255));
+  $dark: #1D1D1F;
+  $font-family-base: "Barlow";
+  $font-size-nav: 20px;
+
+  body {
+    margin: 0;
+    background-color: rgb(30, 165, 82);
+    color: black;
+  }
