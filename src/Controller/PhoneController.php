@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/phone')]
+#[Route('/Telephone')]
 class PhoneController extends AbstractController
 {
     #[Route('/', name: 'app_phone_index', methods: ['GET'])]
@@ -21,7 +21,7 @@ class PhoneController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_phone_new', methods: ['GET', 'POST'])]
+    #[Route('/ajouter', name: 'app_phone_new', methods: ['GET', 'POST'])]
     public function new(Request $request, PhoneRepository $phoneRepository): Response
     {
         $phone = new Phone();
@@ -48,7 +48,7 @@ class PhoneController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_phone_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'app_phone_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Phone $phone, PhoneRepository $phoneRepository): Response
     {
         $form = $this->createForm(PhoneType::class, $phone);

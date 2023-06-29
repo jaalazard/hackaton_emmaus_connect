@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/model')]
+#[Route('/Modele')]
 class ModelController extends AbstractController
 {
     #[Route('/', name: 'app_model_index', methods: ['GET'])]
@@ -21,7 +21,7 @@ class ModelController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_model_new', methods: ['GET', 'POST'])]
+    #[Route('/ajouter', name: 'app_model_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ModelRepository $modelRepository): Response
     {
         $model = new Model();
@@ -48,7 +48,7 @@ class ModelController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_model_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'app_model_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Model $model, ModelRepository $modelRepository): Response
     {
         $form = $this->createForm(ModelType::class, $model);
