@@ -22,7 +22,7 @@ class PhoneFixtures extends Fixture implements DependentFixtureInterface
             $phone->setIsBlocked($faker->boolean());
 
             $phone->setModel($this->getReference('model_' . $faker->numberBetween(1, 69)));
-            $phone->setEtat($this->getReference('state_' . $faker->numberBetween(0, 3)));
+            $phone->setEtat($this->getReference('state_' . $faker->numberBetween(0, 1)));
             $phone->setUser($this->getReference('user_' . $faker->numberBetween(1, 10)));
             $phone->setCategory(self::CATEGORIES[array_rand(self::CATEGORIES)]);
             $phone->setPrice($faker->numberBetween(10, 1000));
