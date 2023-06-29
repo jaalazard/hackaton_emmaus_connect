@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Emmaüs Connect | S'enregistrer{% endblock %}
+
+{% block body %}
+    <section class="container d-flex justify-content-center">
+		<div class="col form-row fw-bold">
+            {% for flash_error in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+
+            <h1 class="fw-bold d-flex mb-2 h3 mt-5 py-5 text-light">S'enregister</h1>
+
+            {{ form_errors(registrationForm) }}
+
+            {{ form_start(registrationForm) }}
+
+            <div class="mail mb-4">
+				<label class="form-label fw-bold text-light h5">Email</label>
+				<div class="input-group w-75 w-md-50"></div>
+				{{ form_widget(registrationForm.email) }}
+			</div>
+            <div class="mail my-4">
+				<label class="form-label fw-bold text-light h5">Mot de passe</label>
+				<div class="input-group w-75 w-md-50"></div>
+				{{ form_widget(registrationForm.plainPassword) }}
+			</div>
+                <button type="submit" class="btn btn-success">Valider</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </section>
+{% endblock %}
