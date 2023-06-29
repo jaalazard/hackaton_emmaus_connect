@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
+		<title>
+			{% block title %}Admin
+			{% endblock %}
+		</title>
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		<main class="container-fluid">
+			<div class="row">
+				<div class="col-auto col-md-3 col-xl-2 bg-dark" id="navbarNav">
+					{% block navbar %}
+						{% include 'components/_navbar_admin.html.twig'%}
+					{% endblock %}
+				</div>
+				<div class="col-9 mx-5"> {% block body %}{% endblock %}
+					</div>
+				</div>
+			</main>
+
+			{% block footer %}{% endblock %}
+		</body>
+	</html>
