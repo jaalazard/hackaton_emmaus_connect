@@ -8,8 +8,24 @@
   $font-family-base: "Barlow";
   $font-size-nav: 20px;
 
+
+
   body {
     margin: 0;
     background-color: rgb(30, 165, 82);
     color: black;
+  }
+
+  .button {
+    background-image: linear-gradient(315deg, rgb(249, 169, 250), rgb(174, 173, 238), rgb(197, 247, 255), rgb(212, 154, 232));
+  }
+
+  .imgcircle {
+    height: 50px;
+    width: auto;
+  }
+
+  .imgcard {
+    height: 200px;
+    width: auto;
   }
