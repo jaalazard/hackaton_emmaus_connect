@@ -40,6 +40,9 @@ class Phone
     #[ORM\Column(length: 255)]
     private ?string $category = null;
 
+    #[ORM\Column]
+    private ?bool $isSold = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +140,18 @@ class Phone
     public function setCategory(string $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function isIsSold(): ?bool
+    {
+        return $this->isSold;
+    }
+
+    public function setIsSold(bool $isSold): static
+    {
+        $this->isSold = $isSold;
 
         return $this;
     }
