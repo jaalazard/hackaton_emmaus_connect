@@ -6,7 +6,7 @@
 {% block body %}
 
 	<div class="sieste text-light mx-5 py-5">
-		<h1>Mon stock</h1>
+		<h1 class="text-center notreStockTitle">Notre stock</h1>
 	</div>
 	<section class="container justify-content-center">
 		<div class="row mt-5 mx-5">
@@ -25,12 +25,11 @@
 							    		<li class="mt-2">Ce téléphone est bloqué</li>
 							    	{% else %}
 							    		<li class="mt-2">Ce téléphone est débloqué</li>
-							    	{% endif %}
-							    	{{ phone.isBlocked }}</h4>
+							    	{% endif %}</h4>
                             </div>
 							    <p class="text-dark fs-5 fw-bold text-uppercase text-end">{{ phone.picture }}</p>
 							<button type="button" class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-2">
-								<a class="text-light text-decoration-none fs-5 fw-bolder" href="#">Description</a>
+								<a class="text-light text-decoration-none fs-5 fw-bolder" href="{{ path('app_phone_one', {'phone': phone.id})  }}">Description</a>
 							</button>
 						</div>
 					</div>
