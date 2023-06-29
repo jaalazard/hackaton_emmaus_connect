@@ -12,6 +12,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PhoneFormController extends AbstractController
 {
+
+    #[Route('/monStock', name: 'app_phone_stock', methods: ['GET'])]
+    public function myStock(PhoneRepository $phoneRepository): Response
+    {
+        return $this->render('phone/monStock.html.twig', [
+            'phones' => $phoneRepository->findAll(),
+        ]);
+    }
+
     #[Route('/ajouterUnTelephone', name: 'app_phone_form')]
     public function index(Request $request, PhoneRepository $phoneRepository): Response
     {

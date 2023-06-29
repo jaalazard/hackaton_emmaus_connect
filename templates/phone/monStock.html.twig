@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Emmaüs Connect | Mon stock{% endblock %}
+
+{% block body %}
+    
+    <div class="sieste text-light">
+        <h1>Mon stock</h1>
+    </div>
+    <section class="stock container-fluid px-5">
+        <div class="row mt-5">
+                {% for phone in phones %}
+                    <article class="col text-light text-center d-flex-column d-md-flex justify-content-center align-items-center">
+                        <img src={{ asset('build/images/iphoneImage.png') }} class="img-fluid" alt="Placeholder_phone">
+                        <h2 class="fs-5 fw-medium">{{ phone.model.marque.name }}</h2>
+                        <p class="fs-5 fw-medium">{{ phone.isBlocked }}</p>
+                        <img src class="fs-5 fw-medium">{{ phone.picture }}</td>
+                    </article>
+                {% else %}
+                    <span>
+                        <td colspan="7">Pas de téléphone en stock</td>
+                    </span>
+                {% endfor %}
+        </div>
+    </section>
+    <a href="{{ path('app_phone_index') }}">retour à la liste</a>
+{% endblock %}
