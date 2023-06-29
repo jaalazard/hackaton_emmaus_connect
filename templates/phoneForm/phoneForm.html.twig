@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajoute un téléphone
+{% endblock %}
+
+{% block body %}
+	<main class="container mt-4 pt-4">
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<div class="d-flex justify-content-end">
+			<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+		</div>
+		{{ form_end(form) }}
+	</main>
+{% endblock %}
