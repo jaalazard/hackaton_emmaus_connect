@@ -34,7 +34,7 @@ class PhoneController extends AbstractController
             return $this->redirectToRoute('app_phone_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('phone/new.html.twig', [
+        return $this->render('phone/new.html.twig', [
             'phone' => $phone,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class PhoneController extends AbstractController
             return $this->redirectToRoute('app_phone_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('phone/edit.html.twig', [
+        return $this->render('phone/edit.html.twig', [
             'phone' => $phone,
             'form' => $form,
         ]);

@@ -21,27 +21,42 @@ class PhoneType extends AbstractType
                     'Non' => false,
                     'Oui' => true,
                 ], 
-                'label' => 'est-il bloqué ?',
+                'label' => 'Est-il bloqué ?',
+                'label_attr' => [
+                    'class' => 'text-light pt-4',
+                ],
              ],)
 
             ->add('model',
             EntityType::class,
             [
                 'label' => 'Modèle',
+                'label_attr' => [
+                    'class' => 'text-light pt-4',
+                ],
                 'class' => Model::class,
                 'choice_label' => 'name',
-            ], )
+            ],)
 
             ->add('etat',
             EntityType::class,
             [
                 'label' => 'État',
+                'label_attr' => [
+                    'class' => 'text-light pt-4',
+                ],
                 'class' => State::class,
                 'choice_label' => 'name',
             ],)
 
-            ->add('picture') 
-        ;
+            ->add('picture',
+            null,
+            [
+                'label' => 'Image',
+                'label_attr' => [
+                    'class' => 'text-light pt-4',
+                ],
+            ],);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
