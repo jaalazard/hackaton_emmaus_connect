@@ -21,11 +21,11 @@ class Phone
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
     #[ORM\JoinColumn(nullable: true)]
-    private ?brand $brand = null;
+    private ?Brand $brand = null;
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?model $model = null;
+    private ?Model $model = null;
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
     #[ORM\JoinColumn(nullable: false)]
