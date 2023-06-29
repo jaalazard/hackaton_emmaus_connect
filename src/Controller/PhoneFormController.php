@@ -45,6 +45,7 @@ class PhoneFormController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $phone->setUser($this->getUser());
+            $phone->setIsSold(false);
             $phone->setCategory($calculator->CategoryCalculator($phone->getModel()->getRam(), $phone->getModel()->getMemory(), $phone->isIsBlocked(), $phone->getEtat()));
             $phone->setPrice($calculator->PriceCalculator($phone->getModel()->getRam(), $phone->getModel()->getMemory(), $phone->isIsBlocked(), $phone->getEtat()));
             $phoneRepository->save($phone, true);

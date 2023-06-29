@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Brand;
 use App\Entity\Model;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,7 +22,13 @@ class ModelType extends AbstractType
             ->add('weight')
             ->add('connection')
             ->add('memory')
-            ->add('marque')
+            ->add('marque',
+            EntityType::class,
+            [
+                'label' => 'Marque',
+                'class' => Brand::class,
+                'choice_label' => 'name',
+            ],)
         ;
     }
 

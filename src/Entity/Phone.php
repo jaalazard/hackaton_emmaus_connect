@@ -41,7 +41,7 @@ class Phone
     private ?string $category = null;
 
     #[ORM\Column]
-    private ?bool $isSold = null;
+    private ?bool $isSold = false;
 
     public function getId(): ?int
     {
