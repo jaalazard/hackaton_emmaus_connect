@@ -6,22 +6,19 @@
 		<a class="navbar-brand mx-3" href="{{ path('home_')}}">
 			<img class="logo-nav img-fluid d-none d-md-block" src=" {{ asset('build/images/Logo_EC_light.png') }} " alt="Logo Emmaüs Connect">
 		</a>
-		<ul class="navbar-nav order-md-2">
-			<li class="nav-link dropdown">
-				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+		<ul class="navbar-nav order-md-2 ">
+			<li class="dropdown ">
+				<a class="nav-link dropdown-toggle text-decoration-none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 					{% include 'icons/profil.svg' %}
 				</a>
-				<ul class="dropdown-menu">
-					<li>
-						<a class="dropdown-item text-light" href="#">Profil</a>
-					</li>
+				<ul class="bg-light rounded-4 dropdown-menu">
 					{% if app.user %}
 						<li>
-							<a class="dropdown-item mx-3 text-decoration-none text-light" href="#">Déconnexion</a>
+							<a class="dropdown-item mx-3 text-decoration-none text-uppercase fs-5 fw-bold text-dark" href="{{ path('app_logout') }}">Déconnexion</a>
 						</li>
 					{% else %}
 						<li>
-							<a class="dropdown-item mx-3 text-decoration-none text-light" href="#">Connexion</a>
+							<a class="dropdown-item mx-3 text-decoration-none text-uppercase fs-5 fw-bold text-dark" href="{{ path('app_login') }}">Connexion</a>
 						</li>
 					{% endif %}
 				</ul>
