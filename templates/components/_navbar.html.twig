@@ -26,6 +26,11 @@
 		</ul>
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 			<ul class="navbar-nav">
+				{% if is_granted("ROLE_ADMIN") %}
+					<li class="nav-item">
+						<a class="nav-link mx-3 fs-4 text-light" href="{{ path('home_admin') }}">Admin</a>
+					</li>
+				{% endif %}
 				<li class="nav-item">
 					<a class="nav-link mx-3 fs-4 text-light" href="{{ path('app_phone_form') }}">Ajouter un téléphone</a>
 				</li>
