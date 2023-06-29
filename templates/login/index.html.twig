@@ -4,33 +4,31 @@
 {% endblock %}
 
 {% block body %}
-	<section class="container d-flex justify-content-center">
-		<div class="col form-row fw-bold">
+	<section class="container mt-4 pt-4">
+		<div class="card bg-light  bg-light rounded-1 rounded-bottom-5 rounded-start-1 m-5 p-5">
 			{% if error %}
 				<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 			{% endif %}
 
-			<h1 class="fw-bold text-uppercase d-flex mb-2 h3 mt-5 py-5 text-light">Connexion</h1>
+			<h1 class="fw-bold text-uppercase d-flex mb-2 h2 mt-3 text-light">Connexion</h1>
 
 			<form action="{{ path('app_login') }}" method="post">
-				<div class="d-flex flex-column">
+				<div class="d-flex flex-column mt-5">
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
 					<label class="form-label fw-bold text-light text-uppercase h5" for="username">Email</label>
-					<div class="input-group w-100 w-md-50">
-						<span class="input-group-text bg-primary"></span>
+					<div class="input-group w-100 w-md-50 mb-2">
 						<input type="text" placeholder="exemple@exemple.com" class="form-control" id="username" name="_username" value="{{ last_username }}">
 					</div>
 
-					<label class="fw-bold form-label text-light text-uppercase mt-3 h5" for="password">Mot de passe</label>
+					<label class="fw-bold form-label mt-4 text-light text-uppercase mt-3 h5" for="password">Mot de passe</label>
 					<div class="input-group w-100 w-md-50">
-						<span class="input-group-text bg-primary"></span>
 						<input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password">
 					</div>
 
 					<input type="hidden" name="_target_path" value="app_home">
 					<div class="d-flex justify-content-end">
-						<button class="w-50 mt-4 btn btn-primary fw-bold text-uppercase" type="submit">Valider</button>
+						<button class="btn btn-dark text-uppercase p-2 px-4 mt-5 btn col-btn-sm rounded-5 d-grid" type="submit">Valider</button>
 					</div>
 				</div>
 			</form>

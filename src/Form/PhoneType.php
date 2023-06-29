@@ -25,7 +25,7 @@ class PhoneType extends AbstractType
 
                 'label' => 'Est-il bloqué ?',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5',
                 ],
              ],)
 
@@ -34,7 +34,7 @@ class PhoneType extends AbstractType
             [
                 'label' => 'Modèle',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5',
                 ],
                 'class' => Model::class,
                 'choice_label' => 'name',
@@ -45,7 +45,7 @@ class PhoneType extends AbstractType
             [
                 'label' => 'État',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5',
                 ],
                 'class' => State::class,
                 'choice_label' => 'name',
@@ -57,7 +57,7 @@ class PhoneType extends AbstractType
                 'download_uri' => true, // not mandatory, default is true
                 'label' => 'Image',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5 fs-5',
                 ],
     ]);
     }
