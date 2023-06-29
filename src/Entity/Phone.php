@@ -20,7 +20,7 @@ class Phone
     private ?string $picture = null;
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?brand $brand = null;
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
