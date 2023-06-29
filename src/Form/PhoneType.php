@@ -22,6 +22,9 @@ class PhoneType extends AbstractType
                     'Oui' => true,
                 ], 
                 'label' => 'est-il bloqué ?',
+                'label_attr' => [
+                    'class' => 'text-light',
+                ],
              ],)
 
             ->add('model',

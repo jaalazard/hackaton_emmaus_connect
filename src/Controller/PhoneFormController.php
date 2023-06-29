@@ -23,11 +23,19 @@ class PhoneFormController extends AbstractController
             $phone->setUser($this->getUser());
             $phoneRepository->save($phone, true);
 
-            return $this->redirectToRoute('app_phone_form', [], Response::HTTP_SEE_OTHER);
+            $myPhone = $phoneRepository->findOneBy([], ['id' => 'DESC']);
+            return $this->redirectToRoute('app_phone_one', ['phone' => $myPhone->getId()]);
         }
 
         return $this->render('phoneForm/phoneForm.html.twig', [
             'form' => $form,
+        ]);
+    }
+    #[Route('/telephone/{phone}', name: 'app_phone_one')]
+    public function ShowPhone(Phone $phone): Response
+    {
+        return $this->render('phoneForm/phone.html.twig', [
+            'phone' => $phone,
         ]);
     }
 }
