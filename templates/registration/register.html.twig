@@ -14,7 +14,16 @@
             {{ form_errors(registrationForm) }}
 
             {{ form_start(registrationForm) }}
-
+            <div class="mail my-4">
+				<label class="form-label fw-bold text-light h5">Prénom</label>
+				<div class="input-group w-75 w-md-50"></div>
+				{{ form_widget(registrationForm.firstname) }}
+			</div>
+            <div class="mail my-4">
+				<label class="form-label fw-bold text-light h5">Nom</label>
+				<div class="input-group w-75 w-md-50"></div>
+				{{ form_widget(registrationForm.name) }}
+			</div>
             <div class="mail mb-4">
 				<label class="form-label fw-bold text-light h5">Email</label>
 				<div class="input-group w-75 w-md-50"></div>
@@ -25,7 +34,7 @@
 				<div class="input-group w-75 w-md-50"></div>
 				{{ form_widget(registrationForm.plainPassword) }}
 			</div>
-                <button type="submit" class="btn btn-success">Valider</button>
+                <button type="submit" class="button rounded-4 p-2 fw-bold fs-4 text-uppercase">Valider</button>
             {{ form_end(registrationForm) }}
         </div>
     </section>
