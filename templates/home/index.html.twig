@@ -33,80 +33,39 @@
 				</div>
 			</div>
 		</header>
-		<main class="container">
-			<img class="imgtriplestars" src=" {{ asset('build/images/triplestarslight.png') }} " alt="background-radient">
+		<main class="container pb-5">
+			<div class="d-flex justify-content-center">
+				<img class="imgtriplestars" src=" {{ asset('build/images/triplestarslight.png') }} " alt="background-radient">
+			</div>
 			<button type="button" class="button shadow-lg text-uppercase p-3 btn col-btn-sm rounded-5 d-grid col-4 mx-auto m-5">
 				<a class="text-dark text-decoration-none fs-2 fw-bolder" href="#">nos ventes</a>
 			</button>
 			<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 m-5">
-				<div class="col">
-					<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
-						<div class="card-body position relative">
-							<h6 class="bg-light border border-dark border-4 rounded-4 text-uppercase fw-bolder p-2  text-dark position-absolute top-0 start-50 translate-middle">Top vente</h6>
-							<div class="img d-flex justify-content-center">
-								<img src=" {{ asset('build/images/iphone.png') }} " class="imgcard m-4 ">
+				{% for phone in phones %}
+					<div class="col">
+						<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
+							<div class="card-body position relative">
+								<h6 class="bg-light border border-dark border-4 rounded-4 text-uppercase fw-bolder p-2  text-dark position-absolute top-0 start-50 translate-middle">Top vente</h6>
+								<div class="img d-flex justify-content-center">
+									<img src=" {{phone.picture ? vich_uploader_asset(phone) : asset('build/images/iphoneImage.png') }}  " class="imgcard m-4 ">
+								</div>
+								<h3 class="text-dark fs-4 fw-bold text-center text-uppercase">{{ phone.model.name }}</h3>
+								<h4 class="text-dark fs-5 fst-italic text-center text-uppercase ">{{ phone.model.color }}</h4>
+								<button class="btn text-uppercase fs-2 btn col-btn-sm rounded-5 d-grid col-3 mx-auto m-3">{{ phone.price }}€</button>
+								<button type="button" class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-2">
+									<a class="text-light text-decoration-none fs-5 fw-bolder" href="{{ path('app_phone_one', {'phone': phone.id}) }}">VOIR PLUS</a>
+								</button>
 							</div>
-							<h3 class="text-dark fs-4 fw-bold text-uppercase">Modéle</h3>
-							<h4 class="text-dark fs-5 fst-italic text-uppercase ">Go - Color</h4>
-							<p class="text-dark fs-5 fw-bold text-uppercase text-end">423.18 €</p>
-							<button type="button" class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-2">
-								<a class="text-light text-decoration-none fs-5 fw-bolder" href="#">Description</a>
-							</button>
 						</div>
 					</div>
-				</div>
-				<div class="col">
-					<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
-						<div class="card-body">
-							<div class="img d-flex justify-content-center">
-								<img src=" {{ asset('build/images/iphone.png') }} " class="imgcard m-4 ">
-							</div>
-							<h3 class="text-dark fs-4 fw-bold text-uppercase">Modéle</h3>
-							<h4 class="text-dark fs-5 fst-italic text-uppercase ">Go - Color</h4>
-							<p class="text-dark fs-5 fw-bold text-uppercase text-end">423.18 €</p>
-							<button type="button" class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-2">
-								<a class="text-light text-decoration-none fs-5 fw-bolder" href="#">Description</a>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
-						<div class="card-body">
-							<div class="img d-flex justify-content-center">
-								<img src=" {{ asset('build/images/iphone.png') }} " class="imgcard m-4 ">
-							</div>
-							<h3 class="text-dark fs-4 fw-bold text-uppercase">Modéle</h3>
-							<h4 class="text-dark fs-5 fst-italic text-uppercase ">Go - Color</h4>
-							<p class="text-dark fs-5 fw-bold text-uppercase text-end">423.18 €</p>
-							<button type="button" class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-2">
-								<a class="text-light text-decoration-none fs-5 fw-bolder" href="#">Description</a>
-							</button>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card bg-dark rounded-end-0 rounded-bottom-5 rounded-start-0">
-						<div class="card-body">
-							<div class="img d-flex justify-content-center">
-								<img src=" {{ asset('build/images/iphone.png') }} " class="imgcard m-4 ">
-							</div>
-							<h3 class="text-dark fs-4 fw-bold text-uppercase">Modéle</h3>
-							<h4 class="text-dark fs-5 fst-italic text-uppercase ">Go - Color</h4>
-							<p class="text-dark fs-5 fw-bold text-uppercase text-end">423.18 €</p>
-							<button type="button" class="btn btn-dark text-uppercase p-2 btn col-btn-sm rounded-5 d-grid col-8 mx-auto m-2">
-								<a class="text-light text-decoration-none fs-5 fw-bolder" href="#">Description</a>
-							</button>
-						</div>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</main>
-		<h2 class="button text-center text-uppercase p-4 col-btn-sm rounded-5 d-grid col-4 mx-auto m-5 text-dark text-decoration-none fs-3 fw-bolder">Foire aux questions</h2>
-		<div class="d-flex justify-content-center mb-5">
+		<h2 class="button text-center text-uppercase p-4 col-btn-sm rounded-5 d-grid col-4 mx-auto m-2 mt-5 text-dark text-decoration-none fs-3 fw-bolder">Foire aux questions</h2>
+		<div class="d-flex justify-content-center mb-5 mx-auto">
 			<div class="row">
 				<div class="col-2"></div>
-				<div class="col-7 my-5 ">
+				<div class="col-8 my-5 ">
 					<div class="accordion mt-5" id="accordionPanelsStayOpenExample">
 						<div class="accordion-item bg-transparent">
 							<h2 class="accordion-header">
