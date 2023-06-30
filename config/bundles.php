@@ -18,5 +18,4 @@ return [
     Symfony\UX\StimulusBundle\StimulusBundle::class => ['all' => true],
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
-
 ];
