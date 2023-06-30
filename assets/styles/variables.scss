@@ -8,6 +8,15 @@
   $font-family-base: "Barlow";
   $font-size-nav: 20px;
 
+  $bs-dropdown-link-hover-bg: transparent;
+  $bs-dropdown-link-hover-color: transparent;
+
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: transparent; 
+    background-color: transparent;
+}
+
+
 
 
   body {
