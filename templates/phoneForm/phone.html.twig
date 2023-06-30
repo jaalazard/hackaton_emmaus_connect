@@ -15,7 +15,7 @@
 			<div class="myLine"></div>
 			<h2 class="text-center myhead mb-4 pb-4">{{ phone.model.name }}</h2>
 			<div class="myGrid">
-				<img src=" {{ asset('build/images/iphoneImage.png') }} " alt="image téléphone">
+				<img src=" {{phone.picture ? vich_uploader_asset(phone) : asset('build/images/iphoneImage.png') }} " alt="image téléphone">
 				<div class="d-flex justify-content-center justify-content-md-start">
 					<ul class="mt-4 pt-4">
 						<li class="mt-2">

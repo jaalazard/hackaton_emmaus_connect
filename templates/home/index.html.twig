@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block body %}
- 	<img class="img-home img-fluid z-n1 position-absolute" src=" {{ asset('build/images/rectangleRadient.png') }} " width="150%" alt="background-radient"> 
+ 	<img class="img-home img-fluid z-n1 position-absolute" src=" {{ asset('build/images/rectangleRadient.png') }} " width="150%" style="height: 450px;" alt="background-radient"> 
 	<header class="pink-stripe">
 		<div class="container-xl g-5">
 			<button type="button" class="button text-uppercase p-3 btn col-btn-sm rounded-5 d-grid col-4 mx-auto m-5">
@@ -50,7 +50,7 @@
 						<div class="card-body position relative">
 							<h6 class="bg-light border border-dark border-4 rounded-4 text-uppercase fw-bolder p-2  text-dark position-absolute top-0 start-50 translate-middle">Top vente</h6>
 							<div class="img d-flex justify-content-center">
-								<img src=" {{ asset('build/images/iphone.png') }} " class="imgcard m-4 ">
+								<img src=" {{phone.picture ? vich_uploader_asset(phone) : asset('build/images/iphoneImage.png') }}  " class="imgcard m-4 ">
 							</div>
 							<h3 class="text-dark fs-4 fw-bold text-center text-uppercase">{{ phone.model.name }}</h3>
 							<h4 class="text-dark fs-5 fst-italic text-center text-uppercase ">{{ phone.model.color }}</h4>

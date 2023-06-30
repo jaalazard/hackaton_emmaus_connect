@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use App\Repository\PhoneRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: PhoneRepository::class)]
+#[Vich\Uploadable] 
 class Phone
 {
     #[ORM\Id]
@@ -18,6 +21,9 @@ class Phone
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
+
+    #[Vich\UploadableField(mapping: 'phone_file', fileNameProperty: 'picture')]
+    private ?File $phoneFile = null;
 
     #[ORM\ManyToOne(inversedBy: 'phones')]
     #[ORM\JoinColumn(nullable: true)]
@@ -41,7 +47,7 @@ class Phone
     private ?string $category = null;
 
     #[ORM\Column]
-    private ?bool $isSold = null;
+    private ?bool $isSold = false;
 
     public function getId(): ?int
     {
@@ -154,5 +160,15 @@ class Phone
         $this->isSold = $isSold;
 
         return $this;
+    }
+       public function setPhoneFile(File $picture = null): Phone
+    {
+        $this->phoneFile = $picture;
+        return $this;
+    }
+
+    public function getPhoneFile(): ?File
+    {
+        return $this->phoneFile;
     }
 }

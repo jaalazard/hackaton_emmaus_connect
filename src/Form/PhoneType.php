@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class PhoneType extends AbstractType
 {
@@ -24,7 +25,7 @@ class PhoneType extends AbstractType
 
                 'label' => 'Est-il bloqué ?',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5',
                 ],
              ],)
 
@@ -33,7 +34,7 @@ class PhoneType extends AbstractType
             [
                 'label' => 'Modèle',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5',
                 ],
                 'class' => Model::class,
                 'choice_label' => 'name',
@@ -44,20 +45,21 @@ class PhoneType extends AbstractType
             [
                 'label' => 'État',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5',
                 ],
                 'class' => State::class,
                 'choice_label' => 'name',
             ],)
 
-            ->add('picture',
-            null,
-            [
+            ->add('phoneFile', VichFileType::class, [
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_uri' => true, // not mandatory, default is true
                 'label' => 'Image',
                 'label_attr' => [
-                    'class' => 'text-light pt-4',
+                    'class' => 'text-light mt-2 form-label fw-bold text-light text-uppercase h5 fs-5',
                 ],
-            ],);
+    ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
