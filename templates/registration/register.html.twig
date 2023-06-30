@@ -9,28 +9,28 @@
                 <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
             {% endfor %}
 
-            <h1 class="fw-bold d-flex mb-2 h3 py-2 text-light">S'enregister</h1>
+            <h1 class="fw-bold d-flex mb-2 h3 py-2">S'enregister</h1>
 
             {{ form_errors(registrationForm) }}
 
             {{ form_start(registrationForm) }}
             <div class="mail my-4">
-				<label class="form-label fw-bold text-light h5">Prénom</label>
+				<label class="form-label">Prénom</label>
 				<div class="input-group w-75 w-md-50"></div>
 				{{ form_widget(registrationForm.firstname) }}
 			</div>
             <div class="mail my-4">
-				<label class="form-label fw-bold text-light h5">Nom</label>
+				<label class="form-label">Nom</label>
 				<div class="input-group w-75 w-md-50"></div>
 				{{ form_widget(registrationForm.name) }}
 			</div>
             <div class="mail mb-4">
-				<label class="form-label fw-bold text-light h5">Email</label>
+				<label class="form-label">Email</label>
 				<div class="input-group w-75 w-md-50"></div>
 				{{ form_widget(registrationForm.email) }}
 			</div>
             <div class="mail my-4">
-				<label class="form-label fw-bold text-light h5">Mot de passe</label>
+				<label class="form-label">Mot de passe</label>
 				<div class="input-group w-75 w-md-50"></div>
 				{{ form_widget(registrationForm.plainPassword) }}
 			</div>
