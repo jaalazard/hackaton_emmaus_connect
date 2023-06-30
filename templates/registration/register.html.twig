@@ -3,13 +3,13 @@
 {% block title %}Emmaüs Connect | S'enregistrer{% endblock %}
 
 {% block body %}
-    <section class="container d-flex justify-content-center">
-		<div class="col form-row fw-bold">
+    <section class="container">
+		<div class="card bg-light  bg-light rounded-1 rounded-bottom-5 rounded-start-1 m-5 p-5">
             {% for flash_error in app.flashes('verify_email_error') %}
                 <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
             {% endfor %}
 
-            <h1 class="fw-bold d-flex mb-2 h3 mt-5 py-5 text-light">S'enregister</h1>
+            <h1 class="fw-bold d-flex mb-2 h3 py-3 text-light">S'enregister</h1>
 
             {{ form_errors(registrationForm) }}
 
@@ -34,7 +34,9 @@
 				<div class="input-group w-75 w-md-50"></div>
 				{{ form_widget(registrationForm.plainPassword) }}
 			</div>
-                <button type="submit" class="button rounded-4 p-2 fw-bold fs-4 text-uppercase">Valider</button>
+                <div class="d-flex justify-content-end">
+				<button class="btn btn-dark text-uppercase p-2 mt-5 px-4 btn col-btn-sm rounded-5 d-grid">Valider</button>
+			</div>
             {{ form_end(registrationForm) }}
         </div>
     </section>
