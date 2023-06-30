@@ -10,18 +10,18 @@
 				<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 			{% endif %}
 
-			<h1 class="fw-bold text-uppercase d-flex mb-2 h2 mt-3 text-light">Connexion</h1>
+			<h1 class="fw-bold text-uppercase d-flex mb-2 h2 mt-3">Connexion</h1>
 
 			<form action="{{ path('app_login') }}" method="post">
 				<div class="d-flex flex-column mt-5">
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-					<label class="form-label fw-bold text-light text-uppercase h5" for="username">Email</label>
+					<label class="form-label text-uppercase" for="username">Email</label>
 					<div class="input-group w-100 w-md-50 mb-2">
 						<input type="text" placeholder="exemple@exemple.com" class="form-control" id="username" name="_username" value="{{ last_username }}">
 					</div>
 
-					<label class="fw-bold form-label mt-4 text-light text-uppercase mt-3 h5" for="password">Mot de passe</label>
+					<label class="fw-bold form-label mt-4 mt-3" for="password">Mot de passe</label>
 					<div class="input-group w-100 w-md-50">
 						<input type="password" placeholder="Mot de passe" class="form-control" id="password" name="_password">
 					</div>
