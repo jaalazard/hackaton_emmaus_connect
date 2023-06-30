@@ -14,11 +14,14 @@
 				<ul class="bg-light rounded-4 dropdown-menu">
 					{% if app.user %}
 						<li>
-							<a class="dropdown-item mx-3 text-decoration-none text-uppercase fs-5 fw-bold text-dark" href="{{ path('app_logout') }}">Déconnexion</a>
+							<a class="dropdown-item text-decoration-none fs-5 fw-bold text-dark" href="{{ path('app_logout') }}">Déconnexion</a>
 						</li>
 					{% else %}
 						<li>
-							<a class="dropdown-item mx-3 text-decoration-none text-uppercase fs-5 fw-bold text-dark" href="{{ path('app_login') }}">Connexion</a>
+							<a class="dropdown-item text-decoration-none fs-5 fw-bold text-dark" href="{{ path('app_login') }}">Connexion</a>
+						</li>
+						<li>
+							<a class="dropdown-item text-decoration-none fs-5 fw-bold text-dark" href="{{ path('app_register') }}">S'inscrire</a>
 						</li>
 					{% endif %}
 				</ul>
