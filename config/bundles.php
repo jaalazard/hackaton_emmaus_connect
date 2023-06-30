@@ -16,9 +16,6 @@ return [
     Symfony\UX\Swup\SwupBundle::class => ['all' => true],
     Symfony\UX\Typed\TypedBundle::class => ['all' => true],
     Symfony\UX\StimulusBundle\StimulusBundle::class => ['all' => true],
-<<<<<<< HEAD
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
-=======
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
->>>>>>> 5400f0d72629734e8d5c023a6977bfe64ce63d20
 ];
